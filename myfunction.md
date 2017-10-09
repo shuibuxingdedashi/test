@@ -75,8 +75,8 @@
     }
 ```
 跳转到[目录](#index)
-mulu1(#index1)
-<span id="index1">234</span>
+### mulu1(#index1)
+### <div id="index1">234</div>
 ### 二维数组按某个值分组
 ```
 
@@ -132,7 +132,7 @@ mulu1(#index1)
     }
 ```
     
-[### implode自定义函数处理多维数组]
+### implode自定义函数处理多维数组
 
 
 
