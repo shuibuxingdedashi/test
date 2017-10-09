@@ -10,11 +10,13 @@
 9.	[统一支付订单号,生成订单使用](#统一支付订单号生成订单使用)
 10.	[成支付单号](#成支付单号)
 11.	[截取字符](#截取字符)
+12.	[加密](#加密)
+13.	[解密](#解密)
 
 ---
 
 1.  ##### 创建一个JSON格式的正确信息
-```ruby
+```php
  /**
      * 创建一个JSON格式的正确信息
      *
@@ -38,7 +40,7 @@
 ```
 
 2. #### 创建一个json错误信息
-```ruby
+```php
 /**
      * 创建一个JSON格式的错误信息
      *
@@ -62,7 +64,7 @@
     }
 ```
 3. ### 递归重组节点信息为多维数组
-```Ruby
+```php
 /**
      * 递归重组节点信息为多维数组
      *
@@ -88,7 +90,7 @@
 ```
 
 4. ###  二维数组按某个值分组
-```
+```php
 
 /**二维数组按某个值分组
     *@param $arr array 要分组的二维数组
@@ -118,7 +120,7 @@
     }  
 ```
 5. ### 对象转数组
-```ruby
+```php
     /**
      * 对象 转 数组
      *
@@ -146,7 +148,7 @@
 
 
 
-```ruby
+```php
 /**
  * [php implode自定义函数处理多维数组]
  * @author tianzehui 2017-08-07
@@ -174,11 +176,11 @@ public function implode_multiArr($array,$mode)
  }
 ```
 7. ### 去掉字符型串最后一个字符
-```ruby
+```php
 substr($parts_type,0,strlen($parts_type)-1);
 ```
 8. ### 获取唯一订单编号,生成订单使用
-```ruby
+```php
 function create_order_unique($shop_id)
 {
     $time = microtime(true);
@@ -194,7 +196,7 @@ function create_order_unique($shop_id)
 
 9. ### 统一支付订单号,生成订单使用
 
- ```ruby
+ ```php
  
     function create_order_no()
     {
@@ -206,7 +208,7 @@ function create_order_unique($shop_id)
     
 ```
  10. ### 生成支付单号
-
+```php
     function create_pay_no()
     {
         $time = microtime(true);
@@ -215,9 +217,10 @@ function create_order_unique($shop_id)
         $pay_no = rand(1000000,99999999).date("YmdHis") . $s2 . rand(100000,999999);
         return $pay_no;
     }
-    
+```
+
 11. ###  截取字符
-```ruby
+```php
     function subtext($text, $length)
     {
         if(mb_strlen($text, 'utf8') > $length)
@@ -226,4 +229,43 @@ function create_order_unique($shop_id)
         }
         return $text;
     }
+    
+```
+12. ### 加密
+~~~php
+function encrypt($data)
+{
+        
+    $key    =   md5("esmi");
+    $str = base64_encode($data);
+    $res =  base64_encode($str.$key);
+    // p($res);
+    return $res;
+}
+~~~
+13. ### 解密
+```php
+function decrypt($data)
+{
+    $key = md5("esmi");
+
+    $data = base64_decode($data);
+    
+    $length = strlen($data);
+    
+    
+    $sstr = substr($data,0,-32);
+    $bkey = str_replace($sstr,'',$data);
+    
+    if($key != $bkey)
+    {
+        return false;
+    }
+    
+    $str = base64_decode($sstr);
+    // echo $str;
+    return $str;   
+}
+
+
 ```
