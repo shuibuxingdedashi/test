@@ -1,9 +1,19 @@
+# [目录]()
 1. [创建一个JSON格式的正确信息](#创建一个JSON格式的正确信息)
 2. [创建一个JSON格式的错误信息](#创建一个json错误信息)
 3. [递归重组节点信息为多维数组](#递归重组节点信息为多维数组)
+4. [二维数组按某个值分组](#二维数组按某个值分组)
+5. [对象转数组](#对象转数组)
+6. [implode自定义函数处理多维数组](#implode自定义函数处理多维数组)
+7. [去掉字符型串最后一个字符](#去掉字符型串最后一个字符)
+8.	[获取唯一订单编号,生成订单使用](#获取唯一订单编号生成订单使用)
+9.	[统一支付订单号,生成订单使用](#统一支付订单号生成订单使用)
+10.	[成支付单号](#成支付单号)
+11.	[截取字符](#截取字符)
 
-	
-##### 创建一个JSON格式的正确信息
+
+
+1.  ##### 创建一个JSON格式的正确信息
 ```ruby
  /**
      * 创建一个JSON格式的正确信息
@@ -27,7 +37,7 @@
     }
 ```
 
-#### 创建一个json错误信息
+2. #### 创建一个json错误信息
 ```ruby
 /**
      * 创建一个JSON格式的错误信息
@@ -51,7 +61,7 @@
         exit;
     }
 ```
-### 递归重组节点信息为多维数组
+3. ### 递归重组节点信息为多维数组
 ```Ruby
 /**
      * 递归重组节点信息为多维数组
@@ -76,10 +86,8 @@
         return $arr;
     }
 ```
-跳转到[目录](#index)
-### mulu1(#index1)
-### <div id="index1">234</div>
-### 二维数组按某个值分组
+
+4. ###  二维数组按某个值分组
 ```
 
 /**二维数组按某个值分组
@@ -109,7 +117,7 @@
         
     }  
 ```
-### 对象转数组
+5. ### 对象转数组
 ```ruby
     /**
      * 对象 转 数组
@@ -134,7 +142,7 @@
     }
 ```
     
-### implode自定义函数处理多维数组
+6. ### implode自定义函数处理多维数组
 
 
 
@@ -165,11 +173,11 @@ public function implode_multiArr($array,$mode)
   	return $dataStr ;
  }
 ```
-### 去掉字符型串最后一个字符
+7. ### 去掉字符型串最后一个字符
 ```ruby
 substr($parts_type,0,strlen($parts_type)-1);
 ```
-### 获取唯一订单编号,生成订单使用
+8. ### 获取唯一订单编号,生成订单使用
 ```ruby
 function create_order_unique($shop_id)
 {
@@ -184,7 +192,7 @@ function create_order_unique($shop_id)
 ```
   
 
-### 统一支付订单号,生成订单使用
+9. ### 统一支付订单号,生成订单使用
 
  ```ruby
  
@@ -197,7 +205,7 @@ function create_order_unique($shop_id)
     }
     
 ```
-### 生成支付单号
+ 10. ### 生成支付单号
 
     function create_pay_no()
     {
@@ -208,13 +216,14 @@ function create_order_unique($shop_id)
         return $pay_no;
     }
     
-### [截取字符](#subtext)
+11. ###  截取字符
+```ruby
     function subtext($text, $length)
     {
         if(mb_strlen($text, 'utf8') > $length)
+        {
             return mb_substr($text, 0, $length, 'utf8').'...';
+        }
         return $text;
     }
-    
-0. 目录{#index}
-跳转到[目录](#index)
+```
