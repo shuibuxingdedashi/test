@@ -75,7 +75,8 @@
     }
 ```
 跳转到[目录](#index)
-mulu1(#index1)
+ mulu1(#index1)
+ <span id="index">234</span>
 ### 二维数组按某个值分组
 ```
 
