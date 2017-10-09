@@ -1,6 +1,7 @@
-
-[目录]
+<i id="index"></i>
+[目录](#index)
 [1.1创建一个JSON格式的正确信息](#makejsonresult)
+[1.2创建一个JSON格式的错误信息](#makejsonerror)
 
 <div id="makejsonresult">
 	
@@ -28,7 +29,7 @@
     }
 ```
 
-#### 创建一个json错误信息(#test)
+#### <i id='makejsonerror'>创建一个json错误信息(#test)
 ```ruby
 /**
      * 创建一个JSON格式的错误信息
