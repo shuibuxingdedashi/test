@@ -1,7 +1,8 @@
 
-[目录](#index1)
+[目录]
+[1.1创建一个JSON格式的正确信息](makejsonresult)
 
-##### 创建一个JSON格式的正确信息
+##### 创建一个JSON格式的正确信息<div id="makejsonresult">
 ```ruby
  /**
      * 创建一个JSON格式的正确信息
