@@ -1,4 +1,4 @@
-## 0. [目录](#index)
+
 [目录](#index1)
 
 ##### 创建一个JSON格式的正确信息
@@ -75,8 +75,8 @@
     }
 ```
 跳转到[目录](#index)
- mulu1(#index1)
- <span id="index">234</span>
+mulu1(#index1)
+<span id="index1">234</span>
 ### 二维数组按某个值分组
 ```
 
